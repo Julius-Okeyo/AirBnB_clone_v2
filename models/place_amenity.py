@@ -10,5 +10,5 @@ class PlaceAmenityAssoc(BaseModel, Base):
     Defines a class that associates two other classes
     '''
     __tablename__ = "place_amenities_assoc"
-    amenity_id = Column(String, ForeignKey("amenities"), nullable=False)
-    place_id = Column(String, ForeignKey("places"), nullable=False)
+    amenity_id = Column(String, ForeignKey("amenities.id"), primary_key=True, nullable=False)
+    place_id = Column(String, ForeignKey("places.id"), primary_key=True, nullable=False)
