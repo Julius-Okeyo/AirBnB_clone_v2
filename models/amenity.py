@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines the Amenity class."""
 from models.base_model import BaseModel, Base
+from models.place import Place
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 

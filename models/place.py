@@ -5,6 +5,7 @@ from os import getenv
 from models.base_model import BaseModel, Base
 from models.amenity import Amenity
 from models.review import Review
+from models.place_amenity import PlaceAmenity 
 from sqlalchemy import Column, Float, ForeignKey, Integer, String, Table
 from sqlalchemy.orm import relationship
 
@@ -24,7 +25,6 @@ class Place(BaseModel, Base):
     reviews = relationship("Review", backref="place", cascade="delete")
     amenities = relationship("Amenity", secondary="place_amenities", viewonly=False, backref="places")
     amenity_ids = []
-    places_city = relationship("City", backref="cities")
 
     if getenv("HBNB_TYPE_STORAGE", None) != "db":
         @property
