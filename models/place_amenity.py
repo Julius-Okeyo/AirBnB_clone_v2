@@ -5,7 +5,7 @@ Defines a class that associates two other classes
 from sqlalchemy import Column, String, ForeignKey
 from models.base_model import BaseModel, Base
 
-class PlaceAmenitiesAssoc(BaseModel, Base):
+class PlaceAmenityAssoc(BaseModel, Base):
     '''
     Defines a class that associates two other classes
     '''
