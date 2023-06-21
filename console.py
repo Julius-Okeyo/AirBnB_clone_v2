@@ -101,10 +101,10 @@ class HBNBCommand(cmd.Cmd):
         """ Prints the help documentation for quit  """
         print("Exits the program with formatting\n")
 
-    def do_EOF(self, arg):
-        """ Handles EOF to exit program """
-        print()
-        exit()
+    def do_EOF(self, line):
+        """EOF signal to exit the program."""
+        print("")
+        return True
 
     def help_EOF(self):
         """ Prints the help documentation for EOF """
