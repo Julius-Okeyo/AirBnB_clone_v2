@@ -4,6 +4,7 @@ from os import getenv
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, Float, ForeignKey, Integer, String, Table
 from sqlalchemy.orm import relationship
+from models.place_amenity import PlaceAmenityAssoc
 
 class Place(BaseModel, Base):
     """ A place to stay """
