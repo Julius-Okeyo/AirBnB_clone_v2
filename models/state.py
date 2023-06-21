@@ -11,7 +11,7 @@ class State(BaseModel):
     __tablename__ = "states"
     
     name = Column(String(128), nullable=False)
-    cities = relationship("City",  back_populates="state_cities", cascade="delete")
+    cities = relationship("City",  backref="state", cascade="delete")
 
     if getenv("HBNB_TYPE_STORAGE") != "db":
         @property

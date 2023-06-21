@@ -8,7 +8,6 @@ from sqlalchemy.orm import relationship
 class Place(BaseModel, Base):
     """ A place to stay """
     from models.amenity import Amenity
-    from models.review import Review
     __tablename__ = "places"
     city_id = Column(String(60), ForeignKey("cities.id"), nullable=False)
     user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
@@ -20,10 +19,8 @@ class Place(BaseModel, Base):
     price_by_night = Column(Integer, default=0)
     latitude = Column(Float)
     longitude = Column(Float)
-    reviews = relationship("Review", back_populates="place_reviews", cascade="delete")
-    amenities = relationship("Amenity", secondary=place_amenity_assoc, viewonly=False, back_populates="places")
-    city_places = relationship("City", back_populates="places", cascade="delete")
-    user_places = relationship("User", back_populates="places")
+    reviews = relationship("Review", back_populates="place", cascade="delete")
+    amenities = relationship("Amenity", secondary="place_amenity_assoc", viewonly=False, backref="places")
     amenity_ids = []
 
     if getenv("HBNB_TYPE_STORAGE", None) != "db":

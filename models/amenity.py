@@ -8,8 +8,7 @@ class Amenity(BaseModel, Base):
     """
     Defines class Amenity with attributes name and place
     """
-    from models.place import Place
     __tablename__ = "amenities"
 
     name = Column(String(128), nullable=False)
-    places = relationship("Place", secondary=place_amenities_assoc, viewonly=False, back_populates="amenities")
+    places = relationship("Place", secondary="place_amenities_assoc", viewonly=False, backref="amenities")
