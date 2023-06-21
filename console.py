@@ -2,6 +2,7 @@
 """ Console Module """
 import cmd
 import sys
+from shlex import split
 from models.base_model import BaseModel
 from models.__init__ import storage
 from models.user import User
@@ -114,36 +115,34 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
-        """
-	Create an object of any class
-	Usage: create <class> <key 1>=<value 2> <key 2>=<value 2> ...
-        Create a new class instance with given keys/values and print its id.
-	"""
+        """Create an object of any class
+        Usage: create <class> <key 1>=<value 2> <key 2>=<value 2> ...
+        Create a new class instance with given keys/values and print its id."""
         try:
-		if not line:
-     			raise SyntaxError()
-		Attribute_list = line.split(" ")
-		
-		kwargs = {}
-		for i in range(1, len(Attribute_list)):
-			key, value = tuple(Attribute_list[i].split("="))
-			if value[0] == '"':
-				value = value.strip('"').replace("_". " ")
-			else:
-				try:
-					value = eval(value)
-				except (SyntaxError, NameError):
-					continue
-			kwargs[key] = value
-		if kwargs == {}:
-			obj = eval(Attribute_list[])()
-		else:
-			obj = eval(Attribute_list[0](**kwargs))
-			storage.new(obj)
-		print(obj.id)
-		obj.save()
-
-	except SyntaxError:
+            if not line:
+                raise SyntaxError()
+            Attribute_list = line.split(" ")
+	
+            kwargs = {}
+            for i in range(1, len(Attribute_list)):
+                key, value = tuple(Attribute_list[i].split("="))
+                if value[0] == '"':
+                    value = value.strip('"').replace("_", " ")
+                else:
+                    try:
+                        value = eval(value)
+                    except (SyntaxError, NameError):
+                        continue
+                kwargs[key] = value
+            if kwargs == {}:
+                obj = eval(Attribute_list[0])()
+            else:
+                print(eval(Attribute_list[0]))
+                obj = eval(Attribute_list[0])(**kwargs)
+                storage.new(obj)
+            print(obj.id)
+            obj.save()
+        except SyntaxError:
             print("** class name missing **")
         except NameError:
             print("** class doesn't exist **")
