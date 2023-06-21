@@ -163,22 +163,22 @@ class HBNBCommand(cmd.Cmd):
             c_id = c_id.partition(' ')[0]
 
         if not c_name:
-            print("** class name missing **")
+            print("** class name missing **\n")
             return
 
         if c_name not in HBNBCommand.classes:
-            print("** class doesn't exist **")
+            print("** class doesn't exist **\n")
             return
 
         if not c_id:
-            print("** instance id missing **")
+            print("** instance id missing **\n")
             return
 
         key = c_name + "." + c_id
         try:
             print(storage._FileStorage__objects[key])
         except KeyError:
-            print("** no instance found **")
+            print("** no instance found **\n")
 
     def help_show(self):
         """ Help information for the show command """
@@ -194,15 +194,15 @@ class HBNBCommand(cmd.Cmd):
             c_id = c_id.partition(' ')[0]
 
         if not c_name:
-            print("** class name missing **")
+            print("** class name missing **\n")
             return
 
         if c_name not in HBNBCommand.classes:
-            print("** class doesn't exist **")
+            print("** class doesn't exist **\n")
             return
 
         if not c_id:
-            print("** instance id missing **")
+            print("** instance id missing **\n")
             return
 
         key = c_name + "." + c_id
@@ -225,7 +225,7 @@ class HBNBCommand(cmd.Cmd):
         if args:
             args = args.split(' ')[0]  # remove possible trailing args
             if args not in HBNBCommand.classes:
-                print("** class doesn't exist **")
+                print("** class doesn't exist **\n")
                 return
             for k, v in storage._FileStorage__objects.items():
                 if k.split('.')[0] == args:
@@ -262,10 +262,10 @@ class HBNBCommand(cmd.Cmd):
         if args[0]:
             c_name = args[0]
         else:  # class name not present
-            print("** class name missing **")
+            print("** class name missing **\n")
             return
         if c_name not in HBNBCommand.classes:  # class name invalid
-            print("** class doesn't exist **")
+            #print("** class doesn't exist **")
             return
 
         # isolate id from args
@@ -273,7 +273,7 @@ class HBNBCommand(cmd.Cmd):
         if args[0]:
             c_id = args[0]
         else:  # id not present
-            print("** instance id missing **")
+            print("** instance id missing **\n")
             return
 
         # generate key from class and id
@@ -281,7 +281,7 @@ class HBNBCommand(cmd.Cmd):
 
         # determine if key is present
         if key not in storage.all():
-            print("** no instance found **")
+            print("** no instance found **\n")
             return
 
         # first determine if kwargs or args
@@ -322,10 +322,10 @@ class HBNBCommand(cmd.Cmd):
             if (i % 2 == 0):
                 att_val = args[i + 1]  # following item is value
                 if not att_name:  # check for att_name
-                    print("** attribute name missing **")
+                    print("** attribute name missing **\n")
                     return
                 if not att_val:  # check for att_value
-                    print("** value missing **")
+                    print("** value missing **\n")
                     return
                 # type cast as necessary
                 if att_name in HBNBCommand.types:
