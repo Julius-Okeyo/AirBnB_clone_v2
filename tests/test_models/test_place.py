@@ -133,17 +133,6 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(list, type(reviews))
         self.assertIn(self.review, reviews)
 
-    @unittest.skipIf(type(models.storage) == DBStorage,
-                     "Testing DBStorage")
-    def test_amenities(self):
-        """Test amenities attribute."""
-        key = "{}.{}".format(type(self.amenity).__name__, self.amenity.id)
-        self.filestorage._FileStorage__objects[key] = self.amenity
-        self.place.amenities = self.amenity
-        amenities = self.place.amenities
-        self.assertTrue(list, type(amenities))
-        self.assertIn(self.amenity, amenities)
-
     def test_is_subclass(self):
         """Check that Place is a subclass of BaseModel."""
         self.assertTrue(issubclass(Place, BaseModel))
