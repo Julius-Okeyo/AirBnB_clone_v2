@@ -1,129 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>AirBnB clone</title>
-
-		<link rel="shortcut icon" href="images/icon.ico" >
-
-		<link rel="stylesheet" href="styles/4-common.css"/>
-		<link rel="stylesheet" href="styles/3-header.css"/>
-		<link rel="stylesheet" href="styles/3-footer.css"/>
-		<link rel="stylesheet" href="styles/6-filters.css"/>
-		<link rel="stylesheet" href="styles/8-places.css"/>
+		<title>AirBnB-Clone</title>
+		<meta charset="utf8">
+		<link rel="stylesheet" href="styles/4-common.css">
+		<link rel="stylesheet" href="styles/3-header.css">
+		<link rel="stylesheet" href="styles/3-footer.css">
+		<link rel="stylesheet" href="styles/6-filters.css">
+		<link rel="stylesheet" href="styles/8-places.css">
+		<link rel="stylesheet"
+          		href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          		crossorigin="anonymous">
+		<link rel="icon" href="images/icon.png">
 	</head>
-    <body>
+	<body>
 		<header>
-			<div id="header_logo"></div>
 		</header>
 		<div class="container">
 			<section class="filters">
-				<button>Search</button>
 				<div class="locations">
 					<h3>States</h3>
-					<h4>California, Arizona...</h4>
-					<ul class="popover">
-						<li><h2>Arizona</h2>
-							<ul>
-								<li><h4>Page</h4></li>
-								<li><h4>Page2</h4></li>
-							</ul></li>
-						<li><h2>California</h2>
-							<ul>
-								<li><h4>San Francisco</h4></li>
-								<li><h4>Los Altos</h4></li>
-							</ul></li>
-					</ul>
+					<h4>Kisumu, Nairobi, Mombasa, ...</h4>
+					<div class="popover">
+            				<h2>Kisumu:</h2>
+            				<ul>
+              					<li>Riat</li>
+              					<li>Milimani</li>
+            				</ul>
+            				<h2>Mombasa:</h2>
+            				<ul>
+              					<li>Nyali</li>
+              					<li>Bamburi</li>
+            				</ul>
+         				</div>
 				</div>
 				<div class="amenities">
 					<h3>Amenities</h3>
-					<h4>Internet, Kitchen...</h4>
+					<h4>Internet, Hot water, Jacuzzi, ...</h4>
 					<ul class="popover">
-						<li><h4>Internet</h4></li>
-						<li><h4>TV</h4></li>
-						<li><h4>Kitchen</h4></li>
-						<li><h4>Iron</h4></li>
-					</ul>
+            				<li>Internet</li>
+            				<li>TV</li>
+            				<li>Kitchen</li>
+            				<li>Iron</li>
+          				</ul>
 				</div>
-
+				<button>Search</button>
 			</section>
 			<section class="places">
 				<h1>Places</h1>
 				<article>
-					<div class="headline">
-						<h2>My home</h2>
-						<div class="price_by_night">$80</div>
+					<div class="name_and_price">
+						<h2>Spacious studio</h2>
+						<div class="price_by_night">2500</div>
 					</div>
 					<div class="information">
-						<div class="max_guest">
-							<div class="guest_icon"></div>
-							<p>2 Guests</p>
-						</div>
-						<div class="number_rooms">
-							<div class="bed_icon"></div>
-							<p>1 Bedroom</p>
-						</div>
-						 <div class="number_bathrooms">
-							<div class="bath_icon"></div>
-							<p>1 Bathroom</p>
-						</div>
-					</div>
-					<div class="user"><b>Owner</b>: John Lennon</div>
-					<div class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </div>
+            				<div class="max_guest">
+              					<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+              					<br>2 Guests
+            				</div>
+            				<div class="number_rooms">
+              					<i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+              					<br>1 Room
+            				</div>
+            				<div class="number_bathrooms">
+              					<i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+              					<br>1 Bathrooms
+            				</div>
+          				</div>
+          				<div class="user">
+            				<strong>Owner:</strong> Kiongozi Mtukutu
+          				</div>
+          				<div class="description">
+            				Ideal for weekend get-aways. Experience the spleandour of
+						the lakeside city of Kisumu by booking our premise today.
+						The spacious studio apartment overlooks the famous Lake Victoria
+						hippo point offering a breathtaking view of both the lake, Dunga beach,
+						and Impala game sanctuary.
+          				</div>
 				</article>
 				<article>
-					<div class="headline">
-						<h2>Tiny house</h2>
-						<div class="price_by_night">$65</div>
+					<div class="name_and_price">
+						<h2>Townhouse</h2>
+						<div class="price_by_night">35000</div>
 					</div>
 					<div class="information">
-                        <div class="max_guest">
-                            <div class="guest_icon"></div>
-                            <p>4 Guests</p>
-                        </div>
-                        <div class="number_rooms">
-                            <div class="bed_icon"></div>
-                            <p>2 Bedroom</p>
-                        </div>
-                         <div class="number_bathrooms">
-                            <div class="bath_icon"></div>
-                            <p>1 Bathroom</p>
-                        </div>
-                    </div>
-					<div class="user"><b>Owner</b>: Adrienne</div>
-					<div class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
+            				<div class="max_guest">
+              					<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+              					<br>10 Guests
+            				</div>
+            				<div class="number_rooms">
+              					<i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+              					<br>5 Room
+            				</div>
+            				<div class="number_bathrooms">
+              					<i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+              					<br>5 Bathrooms
+            				</div>
+          				</div>
+          				<div class="user">
+            				<strong>Owner:</strong> Askari Tapeli
+          				</div>
+          				<div class="description">
+            				Ideal for family holidays. No other place gives you a better
+						experience of a "Mombasa holiday" than our townhouses situated
+						at the heart of Nyali. Our beach-front townhouses gives you open
+						access to a secure private beach and a breathtaking view of the
+						ocean. The view from our rooms will sure take your breath away.
+          				</div>
 				</article>
 				<article>
-					<div class="headline">
-						<h2>A suite</h2>
-						<div class="price_by_night">$180</div>
+					<div class="name_and_price">
+						<h2>Counryside villa</h2>
+						<div class="price_by_night">15000</div>
 					</div>
 					<div class="information">
-                        <div class="max_guest">
-                            <div class="guest_icon"></div>
-                            <p>5 Guests</p>
-                        </div>
-                        <div class="number_rooms">
-                            <div class="bed_icon"></div>
-                            <p>3 Bedroom</p>
-                        </div>
-                         <div class="number_bathrooms">
-                            <div class="bath_icon"></div>
-                            <p>2 Bathroom</p>
-                        </div>
-                    </div>
-					<div class="user"><b>Owner</b>: Betty Holberton</div>
-					<div class="description">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            				<div class="max_guest">
+              					<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+              					<br>8 Guests
+            				</div>
+            				<div class="number_rooms">
+              					<i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+              					<br>3 Room
+            				</div>
+            				<div class="number_bathrooms">
+              					<i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+              					<br>2 Bathrooms
+            				</div>
+          				</div>
+          				<div class="user">
+            				<strong>Owner:</strong> Ego Kiburi
+          				</div>
+          				<div class="description">
+            				Ever wondered how Kisumu looks from the sky? Worry no more and
+						visit our villas situated at the peak of the leafy Riat hills.
+						The panoramic view of the city of Kisumu and its environs
+						is always a vibe. The serenity of the neighborhood will sure be
+						worth all the pennies.
+          				</div>
+				</article>
+				<article>
+					<div class="name_and_price">
+						<h2>Shared maisonnatte</h2>
+						<div class="price_by_night">15000</div>
 					</div>
+					<div class="information">
+            				<div class="max_guest">
+              					<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+              					<br>6 Guests
+            				</div>
+            				<div class="number_rooms">
+              					<i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+              					<br>3 Room
+            				</div>
+            				<div class="number_bathrooms">
+              					<i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+              					<br>2 Bathrooms
+            				</div>
+          				</div>
+          				<div class="user">
+            				<strong>Owner:</strong> Said Said
+          				</div>
+          				<div class="description">
+            				If your aim is to feel at home far from home then Karibu Nyumbani.
+						This tastefully designed and decarated maisonattes will give you a
+						very warm stay as you execute your holiday itinerary. Your hosts will
+						treat you to the best of the swahili culture. I swear you will consider
+						relocating to Mombasa.
+          				</div>
 				</article>
 			</section>
+			<footer>
+				<p>Best School</p>
+			</footer>
 		</div>
-		<footer>
-			<p>Holberton School</p>
-		</footer>
 	</body>
 </html>
