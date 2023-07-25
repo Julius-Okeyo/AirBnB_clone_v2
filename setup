@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+cat setup_mysql_dev.sql | mysql -u root -p
+cat setup_mysql_test.sql | mysql -u root -p
